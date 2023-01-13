@@ -17,12 +17,20 @@ export default {
 </script>
 
 <template lang="">
-    <div class="container d-flex justify-content-between flex-wrap">
+    <div v-if="store.is_loading" class="is-loading text-center">
+        <h1>CARICANDO LO STORE</h1>
+    </div>
+    <div v-else class="container d-flex justify-content-between flex-wrap">
         <Card v-for="(item, index) in store.cards_list" :key="index" :card="item"/>
     </div>
 </template>
 
 <style lang="scss">
+.is-loading {
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
 .container {
     background-color: white;
     padding: 2rem;
