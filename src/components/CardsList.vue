@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template lang="">
-    <div>
+    <div class="container d-flex flex-wrap">
         <Card v-for="(item, index) in store.cards_list" :key="index" :card="item"/>
     </div>
 </template>

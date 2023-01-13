@@ -8,7 +8,7 @@ export default {
 
 <template lang="">
     <div>
-        {{ card }}
+        <img :src="card.card_images[0].image_url_small" alt="">
     </div>
 </template>
 
