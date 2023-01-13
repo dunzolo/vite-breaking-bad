@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template lang="">
-    <header>
+    <header class="d-flex align-items-center">
         <img src="/ygoprodeck_header_logo.png" alt="">
         <h1>Yu-Gi-Oh Api</h1>
     </header>
@@ -14,8 +14,6 @@ export default {
 <style lang="scss">
 header {
     height: 80px;
-    display: flex;
-    align-items: center;
     padding: 0 3rem;
 
     img {
