@@ -25,14 +25,16 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 .is-loading {
     height: calc(100vh - 80px);
     width: 100%;
 }
 
 .container {
-    background-color: white;
+    background-color: $white-color;
     padding: 2rem;
 }
 </style>

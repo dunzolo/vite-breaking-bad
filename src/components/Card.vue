@@ -15,14 +15,16 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 .card {
     width: calc(100% / 5 - 20px);
-    background-color: #D48F38;
+    background-color: $orange-color;
     border: none;
     margin-bottom: 1rem;
 
     .name-card {
-        padding: 1rem 0;
+        padding: 1rem 0.5rem;
         text-transform: uppercase;
         font-size: 18px;
         font-weight: 700;
