@@ -4,7 +4,8 @@ import { store } from '../store.js'
 export default {
     data() {
         return {
-            store
+            store,
+            selected: ''
         }
     },
     computed: {
@@ -16,7 +17,7 @@ export default {
     methods: {
         sendValue() {
             // console.log(store.selected)
-            this.$emit('search', store.selected);
+            this.$emit('search', this.selected);
 
         }
     }
@@ -27,7 +28,7 @@ export default {
     <div class="container">
         <div class="row m-3">
             <div class="col-12">
-                <select name="" id="" @change="sendValue" v-model="store.selected">
+                <select name="" id="" @change="sendValue" v-model="selected">
                     <option value="">Seleziona una categoria</option>
                     <option v-for="(item, index) in uniqueValue" :key="index" :value="item">{{ item }}</option>
                 </select>
