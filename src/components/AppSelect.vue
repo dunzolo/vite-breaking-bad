@@ -7,10 +7,17 @@ export default {
             store
         }
     },
+    computed: {
+        uniqueValue() {
+            const unique = [...new Set(store.cards_list.map((item) => item.type))];
+            return unique;
+        }
+    },
     methods: {
         sendValue() {
             // console.log(store.selected)
             this.$emit('search', store.selected);
+
         }
     }
 }
@@ -21,9 +28,8 @@ export default {
         <div class="row m-3">
             <div class="col-12">
                 <select name="" id="" @change="sendValue" v-model="store.selected">
-                    <!-- <option v-for="(item, index) in store.cards_list" :key="index" :value="item.type">{{ item.type }}</option> -->
-                    <option value="Tuner Monster">Tuner Monster</option>
-                    <option value="Spell Card">Spell Card</option>
+                    <option value="">Seleziona una categoria</option>
+                    <option v-for="(item, index) in uniqueValue" :key="index" :value="item">{{ item }}</option>
                 </select>
             </div>
         </div>

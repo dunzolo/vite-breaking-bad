@@ -32,20 +32,24 @@ export default {
       })
     },
     searchCard(type) {
-      console.log(type);
+      let newUrl = store.url;
 
       // let filtered_cards_list = store.cards_list.filter((elem) => {
       //   return elem.type.includes(type);
       // })
 
-      store.url += `&type=${type}`;
-      // console.log(store.url);
+      if (type != '') {
+        newUrl += `&type=${type}`;
 
-      axios.get(store.url).then((response) => {
-        store.cards_list = response.data.data
-      })
-
-      // console.log(filtered_cards_list);
+        axios.get(newUrl).then((response) => {
+          store.cards_list = response.data.data
+        })
+      }
+      else {
+        axios.get(store.url).then((response) => {
+          store.cards_list = response.data.data
+        })
+      }
     }
   }
 }
