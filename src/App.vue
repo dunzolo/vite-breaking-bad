@@ -3,12 +3,14 @@ import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppSelect from './components/AppSelect.vue';
 import CardsList from './components/CardsList.vue';
+import AppLoading from './components/AppLoading.vue';
 
 import { store } from './store.js';
 
 export default {
   components: {
     AppHeader,
+    AppLoading,
     AppSelect,
     CardsList
   },
@@ -58,10 +60,15 @@ export default {
 <template lang="">
   <div>
     <AppHeader></AppHeader>
-    <main>
-      <AppSelect @search="searchCard"></AppSelect>
-      <CardsList></CardsList>
-    </main>
+    <div v-if="store.is_loading">
+      <AppLoading></AppLoading>
+    </div>
+    <div v-else>
+      <main>
+        <AppSelect @search="searchCard"></AppSelect>
+        <CardsList></CardsList>
+      </main>
+    </div>
   </div>
 </template>
 

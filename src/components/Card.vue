@@ -8,9 +8,9 @@ export default {
 
 <template lang="">
     <div class="card text-center">
-        <img :src="card.card_images[0].image_url" alt="">
+        <img :src="card.card_images[0].image_url" alt="card-image" @click="cardImageFullScreen">
         <span class="text-light name-card">{{ card.name }}</span>
-        <span class="archetype">{{ card.archetype }}</span>
+        <span class="archetype">{{ card.type }}</span>
     </div>
 </template>
 
@@ -33,6 +33,5 @@ export default {
     .archetype {
         font-size: 15px;
     }
-
 }
 </style>

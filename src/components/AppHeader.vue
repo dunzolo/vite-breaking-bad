@@ -11,7 +11,7 @@ export default {
     </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
     height: 80px;
     padding: 0 3rem;

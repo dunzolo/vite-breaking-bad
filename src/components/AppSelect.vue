@@ -16,19 +16,17 @@ export default {
     },
     methods: {
         sendValue() {
-            // console.log(store.selected)
             this.$emit('search', this.selected);
-
         }
     }
 }
 </script>
 
 <template lang="">
-    <div class="container">
-        <div class="row m-3">
+    <div class="container pt-3 pb-3">
+        <div class="row">
             <div class="col-12">
-                <select name="" id="" @change="sendValue" v-model="selected">
+                <select class="form-select" name="select-card" id="select-card" @change="sendValue" v-model="selected">
                     <option value="">Seleziona una categoria</option>
                     <option v-for="(item, index) in uniqueValue" :key="index" :value="item">{{ item }}</option>
                 </select>
@@ -37,6 +35,8 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+.form-select {
+    width: 30%;
+}
 </style>
